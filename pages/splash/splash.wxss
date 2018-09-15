@@ -1,0 +1,36 @@
+page{
+	height:100%;
+}
+.container {
+	height: 100%;
+	padding:0;
+	/*min-height: 100%;*/
+}
+.splash{
+	position: relative;
+	height: 100%;	
+	width: 100%;
+	overflow: hidden;
+}
+.splash swiper-item {
+	flex:1;
+}
+.slide-image{
+	width:100%;
+	height:100%;
+}
+.start{
+	position: absolute;
+	bottom:200rpx;
+	left: 50%;
+	width: 300rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	margin-left: -150rpx;
+	background:rgba(109, 109, 109, 0.7);
+	color:#DEDBDB;
+	font-size: 40rpx;
+	text-align:center;
+	border:1px solid #646161;
+	border-radius: 80rpx;
+}

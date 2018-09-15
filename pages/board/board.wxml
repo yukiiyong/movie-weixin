@@ -1,0 +1,32 @@
+<view class="container">
+  <swiper class="slider" indicator-dots="true" indicator-color="{{indicatorColor}}" autoplay="true" circular="true" interval="5000" duration="1000">	
+    <navigator wx:for="{{boards[0].movies}}" wx:key="id" url="../item/item?id={{item.id}}">
+      <swiper-item class="slider-item">
+        <image src="{{item.images.large}}"></image>
+      </swiper-item>
+    </navigator>           
+  </swiper>
+  <view class="board" scroll-y="true">
+    <block wx:for="{{boards}}" wx:key="key">
+      <view class="board-item">
+        <navigator url="../list/list?type={{item.key}}&title={{item.title}}" hover-class="none">
+          <view class="title">
+            <text>{{item.title}}</text>
+            <text class="iconfont icon-right board-item-icon"></text>
+          </view>
+        </navigator>
+        <scroll-view class="board-content" scroll-x="true">
+          <view class="inner">
+            <navigator wx:for="{{item.movies}}" wx:key="id" url="../item/item?id={{item.id}}">
+              <view class="movie-item">
+               <image class="board-content-image" src="{{item.images.large}}" mode="aspectFill"></image>
+               <text class="board-content-text">{{item.title}}</text>
+             </view>
+           </navigator>
+         </view>
+       </scroll-view>
+     </view>
+   </block>
+ </view>
+ <loading hidden="{{!loading}}">加载中...</loading>
+</view>

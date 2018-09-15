@@ -1,0 +1,41 @@
+@import '../common/movie-list'
+.header {
+	display: flex;
+	margin: 30rpx 10rpx;
+	border: 1px solid #999;
+	border-radius: 30rpx;
+}
+.search{
+	flex: 1;
+	height: 60rpx;
+	font-size: 30rpx;
+	line-height: 60rpx;
+	padding-left: 15rpx;
+	color:#333;
+}
+.search-placeholder {
+	font-size: 30rpx;
+	color: #737373;
+}
+.closeBtn {
+	align-self: center;
+	font-size: 60rpx;
+	color: #666;
+}
+.tips-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	color: #ccc;
+}
+.tips-wrapper image {
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 20rpx;
+}
+.tips {
+	/*flex: 1;*/
+	font-size: 30rpx;
+	line-height: 30rpx;
+}

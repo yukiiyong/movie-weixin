@@ -1,0 +1,9 @@
+<view class="container" >
+  <view class="mapContainer" >
+    <map id="myMap" class="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" show-location="true" bindtap="tapPoi"></map>
+  </view>
+  <text class="mapInfo" >我的位置：{{formattedAddress}}</text>
+  <text class="mapInfo" >经度：{{latitude}}，纬度：{{longitude}}</text>
+  <button class="mapBtn" bindtap="chooseLocation" >更新位置</button>
+  <loading hidden="{{!loading}}">更新位置中</loading>
+</view>

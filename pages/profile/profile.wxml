@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="infoWrapper">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" class="authBtn" bindgetUserInfo="getUserInfo">获取用户昵称和头像</button>
+    <block wx:if="{{hasUserInfo}}">
+      <image src="{{user.avatarUrl}}" mode="aspectFill" class="img"></image>
+      <text class="name" >{{user.nickname || 'myName'}}</text>
+      <text class="desc" >什么都没留下哟</text>
+    </block>   
+  </view>
+  <view class="item" bindtap="clearStorage">
+    <text class="item-hd">清除缓存</text>
+    <text class="item-icon iconfont icon-right" ></text>
+  </view>
+  <view class="item" bindtap="updateLocation">
+    <text class="item-hd" >更新位置</text>
+    <text class="item-icon iconfont icon-right"></text>
+  </view> 
+  <view class="item" bindtap="naviToSystemInfo">
+    <text class="item-hd" >系统信息</text>
+    <text class="item-icon iconfont icon-right"></text>
+  </view>
+</view>

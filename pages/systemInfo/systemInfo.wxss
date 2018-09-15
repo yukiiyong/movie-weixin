@@ -1,0 +1,20 @@
+.container {
+  padding: 40rpx 20rpx 0;
+}
+.item {
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #666;
+  padding: 0 20rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-hd {
+  font-size: 30rpx;
+  color: #333;
+}
+.item-bd {
+  font-size: 30rpx;
+  color: #333;
+}

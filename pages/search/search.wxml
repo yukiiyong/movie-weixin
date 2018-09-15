@@ -1,0 +1,12 @@
+<import src="../common/movie-list" />
+<view class="container">
+	<view class="header" >
+		<input class="search" placeholder="请在这里搜索你喜欢的电影" auto-foucus bindinput="changeSearch" placeholder-class="search-placeholder" value="{{search}}" /> 
+    <text class="iconfont icon-roundclosefill closeBtn" wx:if="{{search}}" bindtap="clearSearch"></text>
+	</view>
+	<view wx:if="{{searching}}" class="tips-wrapper" >
+		<image src="/images/loading.gif" mode="aspectFill" ></image>
+		<text class="tips">拼命加载中...</text>
+	</view>
+	<template is="movie-list" wx:if="{{movies.length}}" data="{{movies, loading:searching, hasMore}}" />
+</view>
