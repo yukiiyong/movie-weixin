@@ -3,7 +3,7 @@
 	display: flex;
 	margin: 30rpx 10rpx;
 	border: 1px solid #999;
-	border-radius: 30rpx;
+	border-radius: 10rpx;
 }
 .search{
 	flex: 1;

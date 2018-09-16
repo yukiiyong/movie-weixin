@@ -1,8 +1,8 @@
 /*
 * @Author: yuki
 * @Date:   2018-04-07 23:18:26
-* @Last Modified by:   yuki
-* @Last Modified time: 2018-09-16 04:08:05
+* @Last Modified by:   yukiiyong
+* @Last Modified time: 2018-09-16 16:56:37
 */
 const wechat = require('./util/wechat.js')
 const douban = require('./util/douban.js')
@@ -31,7 +31,6 @@ App({
 		//获取用户信息
 		wx.getSetting({
 			success: res => {
-				console.log('getSetting')
 				if(res.authSetting['scope.userInfo']) {
 					//已经授权，可以直接调用getUserInfo 获取头像昵称，不会弹框
 					wx.getUserInfo({

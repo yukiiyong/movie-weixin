@@ -1,7 +1,7 @@
 {
 	"pages": [
-		"pages/board/board",
 		"pages/splash/splash",
+		"pages/board/board",
 		"pages/search/search",
 		"pages/profile/profile",
 		"pages/item/item",
@@ -9,7 +9,9 @@
 		"pages/index/index",
 		"pages/logs/logs",
 		"pages/updateLocation/updateLocation",
-		"pages/systemInfo/systemInfo"
+		"pages/systemInfo/systemInfo",
+		"pages/personInfo/personInfo",
+		"pages/editPersonInfo/editPersonInfo"
 	],
 	"window": {
 		"backgroundTextStyle":"light",

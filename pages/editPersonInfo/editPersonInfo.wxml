@@ -1,0 +1,40 @@
+<view class="container" >
+  <view class="item" >
+    <text class="item-hd" >昵称</text>
+    <input class="item-bd input" type="text" placeholder="请输入昵称" value="{{personInfo.nickName}}"></input>
+  </view> 
+  <view class="item" >
+    <text class="item-hd" >性别</text>
+    <radio-group class="radio-group" bindchange="genderChange">
+      <label class="radio" >
+        <radio value="{{1}}" checked="{{personInfo.gender === 1}}" />男
+      </label>
+      <label class="radio" >
+        <radio value="{{2}}" checked="{{personInfo.gender === 2}}" />女
+      </label>
+    </radio-group>
+  </view>  
+  <view class="item" >
+    <text class="item-hd" >城市</text>
+    <picker mode="region" class="picker" bindchange="cityChange" value="{{personInfo.city}}" custom-item="{{customItem}}" >
+      <view class="picker-info">{{personInfo.city[0]}},{{personInfo.city[1]}},{{personInfo.city[2]}}</view>
+    </picker>
+  </view>
+  <view class="item" >
+    <text class="item-hd" >生日</text>
+    <picker mode="date" class="picker" bindchange="birthChange"  start="1965-01-01" end="2033-12-31" value="{{personInfo.birthday}}"  >
+      <view class="picker-info">{{personInfo.birthday}}</view>
+    </picker>
+  </view> 
+  <view class="item" >
+    <text class="item-hd" >星座</text>
+    <picker bindchange="constellationChange" class="picker" range="{{constellationArray}}" value="{{personInfo.constellation}}"  >
+      <view class="picker-info">{{personInfo.constellation}}</view>
+    </picker>
+  </view>  
+  <view class="item" >
+    <text class="item-hd" >个性签名</text>
+    <input class="item-bd input" type="text" placeholder="有什么关于你自己想说的吗" bindinput="descChange" value="{{personInfo.desc}}"></input>
+  </view>    
+  <button bindtap="savePersonInfo" class="btn" >提交</button> 
+</view>
