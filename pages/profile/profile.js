@@ -37,7 +37,7 @@ Page({
       }).catch((err) => {
         console.log(err)
       })
-  }
+  },
   getUserInfo(e) {
     console.log(e)
     const userInfo = e.detail.userInfo
