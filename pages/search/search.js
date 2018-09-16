@@ -13,9 +13,12 @@ Page({
     if(!this.data.hasMore || this.data.searching) { 
       return
     }
+    this.setData({
+      searching: true
+    })
     app.douban.find('search', this.data.page, this.data.count, this.data.search)
       .then(res => {
-        // console.log(res)
+        console.log(res)
         if(res.subjects.length) {
           this.setData({
             movies: this.data.movies.concat(res.subjects),

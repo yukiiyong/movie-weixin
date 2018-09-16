@@ -3,6 +3,7 @@ Page({
   data: {
     latitude: '',
     longitude: '',
+    loading: false,
     markers: [], //latitude longitude name desc
     covers: [],  //latitude,longitude, iconPath
     formattedAddress: '',
@@ -43,6 +44,11 @@ Page({
         this.setData({
           markers: markers,
           formattedAddress: res.formatted_address,
+          loading: false
+        })
+      }).catch((err) => {
+        console.log(err)
+        this.setData({
           loading: false
         })
       })
