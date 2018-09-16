@@ -34,6 +34,8 @@ Page({
             skin: ''
           })
         }
+      }).catch((err) => {
+        console.log(err)
       })
   }
   getUserInfo(e) {
