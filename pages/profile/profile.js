@@ -3,6 +3,7 @@ Page({
 	data: {
     user:{},
     hasUserInfo: false,
+    skin: '',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onLoad() {
@@ -20,6 +21,21 @@ Page({
       }
     }
   },
+  onShow() {
+    app.getStorage('skin')
+      .then((res) => {
+        if(res && res.data) {
+          let skin = res.data
+          this.setData({
+            skin: skin
+          })
+        } else {
+          this.setData({
+            skin: ''
+          })
+        }
+      })
+  }
   getUserInfo(e) {
     console.log(e)
     const userInfo = e.detail.userInfo

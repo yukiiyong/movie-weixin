@@ -22,7 +22,7 @@ Page({
       }).catch((err) => {
         console.log(err)
         this.getUserInfo()
-      })
+      })    
   },
   onShow() {
     app.wechat.getStorage('user')
