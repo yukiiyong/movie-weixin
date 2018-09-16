@@ -22,7 +22,7 @@ Page({
     }
   },
   onShow() {
-    app.getStorage('skin')
+    app.wechat.getStorage('skin')
       .then((res) => {
         if(res && res.data) {
           let skin = res.data
