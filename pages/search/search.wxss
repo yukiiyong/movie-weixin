@@ -8,6 +8,7 @@
 .search{
 	flex: 1;
 	height: 60rpx;
+	border-radius: 30rpx;
 	font-size: 30rpx;
 	line-height: 60rpx;
 	padding-left: 15rpx;

@@ -1,4 +1,7 @@
 {
 	"backgroundColor": "#fff",
-	"backgroundTextStyle": "dark"
+	"backgroundTextStyle": "dark",
+  "usingComponents": {
+    "score": "/components/score/score"
+  }
 }

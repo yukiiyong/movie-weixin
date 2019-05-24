@@ -1,55 +1,55 @@
 {
-	"pages": [
-		"pages/splash/splash",
-		"pages/board/board",
-		"pages/search/search",
-		"pages/profile/profile",
-		"pages/item/item",
-		"pages/list/list",
-		"pages/index/index",
-		"pages/logs/logs",
-		"pages/updateLocation/updateLocation",
-		"pages/systemInfo/systemInfo",
-		"pages/personInfo/personInfo",
-		"pages/editPersonInfo/editPersonInfo"
-	],
-	"window": {
-		"backgroundTextStyle":"light",
-		"navigationBarBackgroundColor":"#7C7C7C",
-		"navigationBarTitleText":"电影",
-		"navigationBarTextStyle":"white",
-		"backgroundColor":"#DDDDDD",
-		"enablePullDownRefresh": false
-	},
-	"tabBar":{
-		"color":"#363333",
-		"backgroundColor":"#EAEAEA",
-		"borderStyle":"white",
-		"selectedColor":"#636262",
-		"list":[
-			{
-				"text":"榜单",
-				"pagePath":"pages/board/board",
-				"iconPath":"images/board.png",
-				"selectedIconPath":"images/board-actived.png"
-			},
-			{
-				"text":"搜索",
-				"pagePath":"pages/search/search",
-				"iconPath":"images/search.png",
-				"selectedIconPath":"images/search-actived.png"
-			},
-			{
-				"text":"我的",
-				"pagePath":"pages/profile/profile",
-				"iconPath":"images/profile.png",
-				"selectedIconPath":"images/profile-actived.png"
-			}
-		]
-	},
-	"networkTimeout": {
-		"request": 20000,
-		"downloadFile": 20000
-	},
-	"debug": false
+  "pages": [
+    "pages/boards/boards",
+    "pages/board/board",
+    "pages/search/search",
+    "pages/profile/profile",
+    "pages/item/item",
+    "pages/list/list",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/updateLocation/updateLocation",
+    "pages/systemInfo/systemInfo",
+    "pages/personInfo/personInfo",
+    "pages/editPersonInfo/editPersonInfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#7C7C7C",
+    "navigationBarTitleText": "电影",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#DDDDDD",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#363333",
+    "backgroundColor": "#EAEAEA",
+    "borderStyle": "white",
+    "selectedColor": "#636262",
+    "list": [
+      {
+        "text": "电影",
+        "pagePath": "pages/boards/boards",
+        "iconPath": "images/board.png",
+        "selectedIconPath": "images/board-actived.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/profile/profile",
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile-actived.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "downloadFile": 20000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于小程序位置接口"
+    }
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
 }

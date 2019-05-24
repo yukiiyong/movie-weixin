@@ -1,3 +1,4 @@
+<import src="/components/score/score" />
 <!-- 渲染普通的单页数据 -->
 <!-- 例如:https://api.douban.com/v2/movie/top250?count=1 -->
 <template name="item1">
@@ -5,12 +6,12 @@
 		<view class="item">
 			<image class="poster" src="{{item.images.small}}"></image>
 			<view class="meta">
-				<text class="title">{{item.title}}</text>
-				<text class="sub-title">{{item.original_title}} ({{item.year}})</text>
-				<view class="artists">导演:<block wx:for="{{item.directors}}" wx:key="id">{{item.name}}</block></view>
-			</view>
-      <view class="rating">
-        <text>{{item.rating.average}}</text>
+				<view class="title">{{item.title}}<text class="year">({{item.year}})</text></view>
+        <view class="rating">
+          <score keys="{{item.rating.average}}" fontsize="20" color="gold" max="{{10}}"></score>
+          <text>{{item.rating.average}}</text>
+        </view>
+        <view class="info">{{item.year}} / <block wx:for="{{item.pubdates}}" >{{item}} </block>/ <block wx:for="{{item.genres}}" wx:key="id">{{item}} </block>/ <block wx:for="{{item.directors}}" wx:key="id">{{item.name}} </block>/ <block wx:for="{{item.casts}}" wx:key="id">{{item.name}} </block></view>
       </view>
 		</view>
 	</navigator>
@@ -22,13 +23,14 @@
     <view class="item">
       <image class="poster" src="{{item.subject.images.small}}"></image>
       <view class="meta">
-        <text class="title">{{item.subject.title}}</text>
-        <text class="sub-title">{{item.subject.original.title}}</text>
-        <view class="artists">导演: <block wx:for="{{item.directors}}" wx:key="id">{{item.name}}</block></view>
+        <view class="title">{{item.subject.title}}<text class="year">({{item.subject.year}})</text></view>
+        <view class="rating">
+          <score keys="{{item.subject.rating.average}}" fontsize="20" color="gold"></score>
+          <text>{{item.subject.rating.average}}</text>
+        </view>
+        <view class="info">{{item.subject.year}} / <block wx:for="{{item.subject.pubdates}}" >{{item}} </block>/ <block wx:for="{{item.subject.genres}}" wx:key="id">{{item}} </block>/ <block wx:for="{{item.subject.directors}}" wx:key="id">{{item.name}} </block>/ <block wx:for="{{item.subject.casts}}" wx:key="id">{{item.name}} </block></view>
       </view>
-      <view class="rating">
-        <text>{{item.subject.rating.average}}</text>
-      </view>
+      <!-- 使用前先引入score组件-->
     </view>
   </navigator>
 </template>

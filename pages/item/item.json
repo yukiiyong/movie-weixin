@@ -1,3 +1,6 @@
 {
-	"navigationBarTitleText": "电影"
+	"navigationBarTitleText": "电影",
+  "usingComponents": {
+    "score": "/components/score/score"
+  }
 }

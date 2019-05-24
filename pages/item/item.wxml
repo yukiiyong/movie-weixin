@@ -2,18 +2,74 @@
 	<view class="background">
 		<image src="{{movie.images.large}}" class="img" wx:if="{{movie.images.large}}" mode="aspectFill"></image>
 	</view>
-	<block wx:if="{{movie.title}}">
-		<view class="meta">
-			<image src="{{movie.images.large}}" class="poster" ></image>
-			<text class="title">{{movie.title}}({{movie.year}})</text>
-			<text class="info">评分:{{movie.rating.average}}</text>
-			<text class="info">导演: <block wx:for="{{movie.directors}}" wx:key="id"><text>{{item.name}}</text></block></text>
-			<text class="info">主演: <block wx:for="{{movie.casts}}" wx:key="id"><text>{{item.name}} </text></block></text>
+	<view class="box info-box pdl30" >
+		<image class="poster" src="{{movie.images.large}}"></image>
+		<view class="info-wrapper" >
+			<text class="info-title" >{{movie.title}}</text>
+			<text class="origin-title" >{{movie.original_title}}({{movie.year}})</text>
+			<view class="info" >{{movie.countries}} /<block wx:for="{{movie.genres}}" >{{item}} </block>/上映时间:<block wx:for="{{movie.pubdates}}">{{item}} </block></view>
 		</view>
-		<view class="summary">
-			<text class="label">摘要：</text>
+	</view>
+	<block wx:if="{{movie.title}}">
+		<view class="summary box pdl30">
+			<text class="label">简介：</text>
 			<text class="content">{{movie.summary}}</text>
 		</view>
 	</block>
+	<view class="box">
+		<view class="title pdl30">
+			<text >演职员</text>
+			<view class="more" >
+				<text class="more-text" >全部{{movie.casts.length + movie.directors.length}}</text>
+				<text class="iconfont icon-right more-icon" ></text>
+			</view>
+		</view>
+		<scroll-view class="actors-content" scroll-x="true">
+			<view class="inner pdl30" >
+				<navigator wx:for="{{movie.directors}}" wx:key="id" url="" >
+					<view class="actor" >
+						<image class="actor-avatar" src="{{item.avatars.large}}" mode="aspectFill" ></image>
+						<text class="actor-name" >{{item.name}}</text>
+						<text class="actor-role" >导演</text>
+					</view>
+				</navigator>
+				<navigator wx:for="{{movie.casts}}" wx:key="id" url="" >
+					<view class="actor">
+						<image class="actor-avatar" src="{{item.avatars.large}}" mode="aspectFill" ></image>
+						<text class="actor-name" >{{item.name}}</text>
+						<text class="actor-role" ></text>
+					</view>
+				</navigator>				
+			</view>
+		</scroll-view>
+	</view>
+	<view class="comments-box pdl30" >
+		<view class="title">
+			<text >短评</text>
+			<view class="more" >
+				<text class="more-text" >全部{{movie.comments_count}}</text>
+				<text class="iconfont icon-right more-icon" ></text>
+			</view>
+		</view>
+		<view class="comments-wrapper" >
+			<view wx:for="{{movie.popular_comments}}" wx:key="id" class="comment-item">
+				<view class="comment-meta" >
+					<image src="{{item.author.avatar}}" class="comment-avatar"></image>
+					<view class="comment-info" >
+						<view class="name" >{{item.author.name}}</view>
+						<view class="info">
+							<score keys="{{item.rating.value}}" max="{{5}}" fontsize="22" color="gold"></score>
+							<text class="comment-date" >{{item.created_at}}</text>
+						</view>						
+					</view>
+				</view>
+				<view class="comment-content" >{{item.content}}</view>
+				<view class="comment-like" >
+					<text class="iconfont icon-likefilled like-icon" ></text> 
+					<text >{{item.useful_count}}</text>
+				</view>
+			</view>   
+		</view>
+	</view>
 	<loading hidden="{{!loading}}">加载中...</loading>
 </view>

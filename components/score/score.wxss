@@ -1,0 +1,24 @@
+@import "/styles/iconfont.wxss"
+.star-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.star {
+  position: relative;
+  width: 26rpx;
+  height: 26rpx;
+}
+.item {
+  position: absolute;
+  width: 13rpx;
+  height: 26rpx;
+}
+.star-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:26rpx;
+  overflow: hidden;
+}

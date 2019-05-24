@@ -1,0 +1,68 @@
+<view class="container" >
+  <view class="search-wrapper" >
+    <input class="search" bindtap="naviToSearch" placeholder="搜索您喜欢的电影" placeholder-class="search-placeholder" />
+  </view>
+  <view class="boards" >
+    <view class="board" scroll-y="true" >
+      <view class="tabs-wrapper" catchtap="navigateToList">
+        <view class="tabs" >
+          <text class="tab {{theaterIndex===index?'tab-active':''}}" wx:for="{{theaters}}" data-index="{{index}}" catchtap="changeTheaterIndex">{{item.title}}</text>
+        </view>
+        <view class="more" >
+          <text class="more-text" >全部 {{theaters[theaterIndex].total}}</text>
+          <text class="iconfont icon-right more-icon" ></text>
+        </view>
+      </view>
+      <swiper current="{{theaterIndex}}" class="board-content" bindchange="theaterChange" style="height:386px">
+        <swiper-item wx:for="{{theaters}}" wx:key="key" >
+          <view class="inner" >
+            <navigator wx:for="{{item.movies}}" wx:key="id" url="../item/item?id={{item.id}}" >
+              <view class="movie-item">
+                <image class="movie-item-image" src="{{item.images.large}}" mode="aspectFill" ></image>
+                <text class="movie-item-title" >{{item.title}}</text>
+                <view class="rating" >
+                  <score keys="{{item.rating.average}}" fontsize="{{20}}" color="{{'gold'}}" max="{{10}}"></score>
+                  <text class="movie-item-rating">{{item.rating.average}}</text>
+                </view>
+              </view>
+            </navigator>            
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>   
+    <view class="board" >
+      <view class="title" >
+        <text>豆瓣榜单</text>
+        <view class="more" >
+          <text  class="more-text">全部{{billboards.length}}</text>
+          <text class="iconfont icon-right more-icon" ></text>          
+        </view>
+      </view>
+      <scroll-view scroll-x="true" class="board-content">
+        <view class="nowrap-inner" >
+          <navigator wx:for="{{billboards}}" wx:for-item="billboard" url="../list/list?type={{billboard.key}}&title={{billboard.title}}" >
+            <view class="board-list-wrapper" >
+              <view class="board-background" >
+                <image src="{{billboard.photo}}"></image>
+              </view>
+              <view class="board-header">
+                <text class="board-desc">共{{billboard.total}}部</text>
+                <text class="board-title">{{billboard.title}}</text>
+              </view>
+              <view class="board-bottom" >
+                <view wx:for="{{billboard.movies}}" class="board-list">
+                  <view class="board-name" >
+                    <text class="mr5" >{{index + 1 + '.' }}{{item.subject ? item.subject.title : item.title}}</text>
+                    <text class="board-rating" >{{item.subject ? item.subject.rating.average : item.rating.average}}</text> 
+                  </view>
+                  <text wx:if="{{item.delta!==undefined}}" class="iconfont board-delta {{item.delta > 0 ? 'icon-showless' : (item.delta < 0? 'icon-showmore' : '')}}" ></text>
+                </view>
+              </view>
+            </view>
+          </navigator>          
+        </view>
+      </scroll-view>
+    </view>    
+  </view>
+  <loading hidden="{{!loading}}" >加载中...</loading>
+</view>

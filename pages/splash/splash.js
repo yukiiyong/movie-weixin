@@ -41,7 +41,7 @@ Page({
 					movies: data.subjects,
 					loading: false
 				})
-				console.log('data'+data.subjects)
+				console.log('data',data)
 				return app.wechat.setStorage('last_splash_data',{
 					movies: data.subjects,
 					expires: Date.now() + 1 *24 * 60 * 60* 1000

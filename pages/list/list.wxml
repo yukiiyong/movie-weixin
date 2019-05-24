@@ -1,4 +1,7 @@
 <import src="../common/movie-list" />
 <view class="container" >
-  <template is="movie-list" data="{{movies, loading, hasMore}}" />
+  <view class="header {{tabFix}}" wx:if="{{type === 'top250' || type === 'weekly' || type === 'new_movies'}}" >
+    <text class="header-title">{{title}}</text>
+  </view>
+  <template is="movie-list" data="{{movies, loading, hasMore}}" />  
 </view>

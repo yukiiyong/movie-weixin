@@ -8,9 +8,10 @@ Page({
 	},
 	//生命周期函数， 监听页面加载
 	onLoad(params) {
-		console.log(this.data.id)
+		// console.log(params)
 		app.douban.findOne(params.id) 
 		.then(data => {
+			console.log(data)
 			this.setData({title:data.title,movie:data,loading:false})
 			wx.setNavigationBarTitle({title: data.title + '<< 电影'})
 		})
