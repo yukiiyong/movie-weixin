@@ -1,9 +1,9 @@
 <view class="star-wrapper" >
   <block wx:for="{{stars}}">
     <view class="star" >
-      <view class="iconfont icon-star star-item" style="font-size: {{fontsize}};color:{{color}};">
+      <view class="iconfont icon-star star-item" style="font-size: {{fontsize}}rpx;color:{{'grey'}};">
       </view>
-      <view class="iconfont icon-starfilled star-item" style="width:{{dataKey-item>1?36:(dataKey-item>0?(dataKey-item)*36:0)}}rpx;font-size: {{fontsize}};color:{{color}};"></view>      
+      <view class="iconfont icon-starfilled star-item" style="width:{{dataKey-item>1?36:(dataKey-item>0?(dataKey-item)*36:0)}}rpx;font-size: {{fontsize}}rpx;color:{{color}};"></view>      
       <view class="item" style="left:0rpx;" data-key="{{item+0.5}}" bindtap="selectLeft" ></view>
       <view class="item" style="right:0rpx;" data-key="{{item+1}}" bindtap="selectRight" ></view>
     </view>

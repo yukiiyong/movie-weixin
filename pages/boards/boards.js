@@ -19,6 +19,7 @@ Page({
     theaterIndex: 0
   },
   onLoad() {
+    //console.log(document.documentElement)
     const promises = this.data.boards.map(board => {
       return app.douban.find(board.key, 1, 6)
         .then(data => {

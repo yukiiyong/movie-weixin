@@ -13,7 +13,7 @@
           <text class="iconfont icon-right more-icon" ></text>
         </view>
       </view>
-      <swiper current="{{theaterIndex}}" class="board-content" bindchange="theaterChange" style="height:386px">
+      <swiper current="{{theaterIndex}}" class="board-content" bindchange="theaterChange" style="height:772rpx">
         <swiper-item wx:for="{{theaters}}" wx:key="key" >
           <view class="inner" >
             <navigator wx:for="{{item.movies}}" wx:key="id" url="../item/item?id={{item.id}}" >
