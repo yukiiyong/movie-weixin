@@ -13,7 +13,7 @@
 * 浏览记录展示
 * "我的"页面" 换肤
 #### 截图
-![屏幕截图](https://github.com/yukiiyong/movie-weixin/blob/master/images/20180917_153005.gif)
+![屏幕截图](https://github.com/yukiiyong/movie-weixin/blob/master/images/demo.gif)
 
 #### 使用的api
 * 豆瓣 https://douban.uieee.com/v2/movie
