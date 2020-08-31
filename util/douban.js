@@ -25,7 +25,12 @@ function fetchApi(type, params) {
 function find(type, page = 1, count = 20, search = '') {
 	const params = {start:(page - 1 ) * count,count: count,city: getApp().data.currentCity }
 	return fetchApi(type, search ? Object.assign(params, {q : search}) : params)
-	      .then(res => res.data)
+				.then(res => {
+					if(res.statusCode == 451) {
+						throw Error('get data from douban fail')
+					}
+					return res.data
+				})
 }
 
 /**
